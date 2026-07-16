@@ -1,7 +1,7 @@
 <?php
 // C:\xampp\htdocs\سيارة\auth.php
-require_once __DIR__ . '/includes/db.php';
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/database/db.php';
+require_once __DIR__ . '/shared/functions.php';
 
 // Log out helper (if accessed directly via auth.php?logout=1)
 if (isset($_GET['logout'])) {
@@ -39,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login_submit'])) {
  
  // Redirect or JSON
  if (isset($_POST['ajax'])) {
- echo json_encode(['success' => true, 'redirect' => $user['role'] === 'admin' ? 'admin/index.php' : 'profile.php']);
+ echo json_encode(['success' => true, 'redirect' => $user['role'] === 'admin' ? 'backend/index.php' : 'profile.php']);
  exit;
  } else {
  if ($user['role'] === 'admin') {
- header("Location: admin/index.php");
+ header("Location: backend/index.php");
  } else {
  header("Location: profile.php");
  }
@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['forgot_submit'])) {
  }
 }
 
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 $lang = getLanguage();
 ?>
 
@@ -222,5 +222,5 @@ $lang = getLanguage();
 </div>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>

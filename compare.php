@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 // C:\xampp\htdocs\سيارة\compare.php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 ?>
 
 <div class="container section-padding">
@@ -26,5 +26,5 @@ require_once __DIR__ . '/includes/header.php';
 </div>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>

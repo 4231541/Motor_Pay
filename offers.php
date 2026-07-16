@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 // C:\xampp\htdocs\سيارة\offers.php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 
 // Fetch active offers
 $stmt = $db->query("SELECT offers.*, cars.id AS car_id, cars.name_ar AS car_name_ar, cars.name_en AS car_name_en, cars.price, cars.min_installment, brands.name_ar AS brand_name_ar, brands.name_en AS brand_name_en
@@ -83,5 +83,5 @@ $lang = getLanguage();
 </style>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>

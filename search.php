@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 // C:\xampp\htdocs\سيارة\search.php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 
 // Fetch options for dropdowns
 $brands = $db->query("SELECT * FROM brands")->fetchAll();
@@ -220,5 +220,5 @@ $lang = getLanguage();
 </div>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>

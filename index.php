@@ -1,6 +1,6 @@
 <?php
 // C:\xampp\htdocs\سيارة\index.php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 
 // Fetch all brands
 $brands = $db->query("SELECT * FROM brands")->fetchAll();
@@ -65,8 +65,8 @@ $searchQuery = $_GET['q'] ?? '';
         <div class="brand-wrapper">
             <?php foreach ($brands as $b): ?>
                 <a href="search.php?brand_id=<?= $b['id'] ?>" class="brand-card">
-                    <div class="brand-logo-mock">
-                        <?= mb_substr($b['name_en'], 0, 2) ?>
+                    <div class="brand-logo-wrapper" style="width: 60px; height: 60px; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; background: var(--bg-secondary); border-radius: 50%; overflow: hidden;">
+                        <img src="<?= htmlspecialchars($b['logo']) ?>" alt="<?= htmlspecialchars($b['name_en']) ?>" style="max-width: 70%; max-height: 70%; object-fit: contain;">
                     </div>
                     <span class="brand-name"><?= $lang === 'ar' ? $b['name_ar'] : $b['name_en'] ?></span>
                 </a>
@@ -199,5 +199,5 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>

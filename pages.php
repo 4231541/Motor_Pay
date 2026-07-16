@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 // C:\xampp\htdocs\سيارة\pages.php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 
 $page = $_GET['page'] ?? 'about'; // 'about', 'faq', 'contact', 'privacy'
 $lang = getLanguage();
@@ -199,5 +199,5 @@ details summary::-webkit-details-marker {
 </style>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>

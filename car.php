@@ -1,6 +1,6 @@
-<?php
+﻿<?php
 // C:\xampp\htdocs\سيارة\car.php
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 
 $id = intval($_GET['id'] ?? 0);
 if ($id <= 0) {
@@ -22,7 +22,7 @@ $car = $stmt->fetch();
 
 if (!$car) {
  echo "<div class='container section-padding text-center'><h3>Car not found.</h3><a href='index.php' class='btn-next'>Back Home</a></div>";
- require_once __DIR__ . '/includes/footer.php';
+ require_once __DIR__ . '/shared/footer.php';
  exit;
 }
 
@@ -499,5 +499,5 @@ function switchSpecsTab(event, tabId) {
 </script>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>

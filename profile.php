@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 // C:\xampp\htdocs\سيارة\profile.php
-require_once __DIR__ . '/includes/db.php';
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/database/db.php';
+require_once __DIR__ . '/shared/functions.php';
 
 // Enforce login
 if (!isLoggedIn()) {
@@ -64,7 +64,7 @@ if (isset($_GET['read_notif'])) {
  exit;
 }
 
-require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/shared/header.php';
 
 // Fetch user requests
 $stmtReq = $db->prepare("SELECT requests.*, cars.name_ar AS car_name_ar, cars.name_en AS car_name_en, cars.price AS car_price, brands.name_ar AS brand_name_ar, brands.name_en AS brand_name_en
@@ -330,5 +330,5 @@ $notifications = $stmtNot->fetchAll();
 </div>
 
 <?php
-require_once __DIR__ . '/includes/footer.php';
+require_once __DIR__ . '/shared/footer.php';
 ?>
